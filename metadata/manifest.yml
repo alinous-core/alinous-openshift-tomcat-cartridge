@@ -4,6 +4,7 @@ Cartridge-Version: 1.0.1
 Cartridge-Vendor: tomohiro_iizuka
 Display-Name: Alinous-Core Cartridge for Openshift
 Version: 1.0
+Source-Url: https://github.com/alinous-core/alinous-cartridge/archive/master.zip
 Categories:
   - service
   - web_framework
