@@ -1,5 +1,5 @@
 #!/bin/bash
 #set -e
 
-echo "Start Installing Alinous-Core Cartridge"
+client_message "Start Installing Alinous-Core Cartridge $OPENSHIFT_ALINOUS_DIR"
 
