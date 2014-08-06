@@ -5,17 +5,12 @@ FMT="%a %b %d %Y %H:%M:%S GMT%z (%Z)"
 
 
 function status() {
-
-    if [ 1 ]; then
-        client_result "Application is running"
-    else
-        client_result "Application is not running"
-    fi
+    echo "status()"
 }
 
 
 function start() {
-
+    echo
 }
 
 function stop() {
@@ -23,7 +18,7 @@ function stop() {
 }
 
 function restart() {
-    
+    echo
 }
 
 function build() {
