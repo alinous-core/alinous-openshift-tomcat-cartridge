@@ -3,7 +3,7 @@ Cartridge-Short-Name: ALINOUS
 Display-Name: Alinous-Core Cartridge for Openshift
 Version: "2.0"
 Cartridge-Version: '1.0.1'
-Cartridge-Vendor: Tomohiro Iizuka
+Cartridge-Vendor: Tomohiro_Iizuka
 Categories:
   - service
   - web_framework
