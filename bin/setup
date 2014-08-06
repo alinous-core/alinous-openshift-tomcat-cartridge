@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+set -u
+
+#source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+#for dir in logs tmp pid cache; do
+#	mkdir -p $dir
+# done
+
+### Force SCL to be enabled
+# dirname $(scl enable ruby193 "which ruby")    > env/OPENSHIFT_RUBY_PATH_ELEMENT
+# scl enable ruby193 "printenv LD_LIBRARY_PATH" > env/LD_LIBRARY_PATH
+# scl enable ruby193 "printenv MANPATH"         > env/MANPATH
+
+### Generate p password
+# cat /dev/urandom | head -c${1:-32} | sha256sum | base64 | head -c 70 > env/CDK_PASSWORD
+# client_result "The CDK is configured with password $(cat env/CDK_PASSWORD) for builds (use 'admin' as the user)"
