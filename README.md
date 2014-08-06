@@ -1,4 +1,5 @@
 alinous-cartridge
 =================
 
-Alinous-Core 
+This is Alinous-Core cartridge for the Openshift cloud.
+
