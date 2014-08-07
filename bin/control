@@ -35,7 +35,7 @@ function status() {
 }
 
 # Check if the tomcatas process is running
-isrunning() {
+function isrunning() {
     # Check for running app
     if [ -f "$ALINOUS_PID_FILE" ]; then
       jbpid=$(cat $ALINOUS_PID_FILE);
@@ -46,6 +46,17 @@ isrunning() {
       fi
     fi
     # not running
+    return 1
+}
+
+function checkRunning() {
+    jbpid=$1;
+    running=`/bin/ps --no-headers --pid $jbpid`
+    if test -n "$running";
+    then
+         return 0
+    fi
+
     return 1
 }
 
@@ -71,9 +82,11 @@ function stop() {
         echo "Sending SIGTERM to tomcat:$pid ..." 1>&2
         killtree $pid
 	
-	while [ isrunning eq 1 ]
+        running=checkRunning $pid
+	while [ $running  eq 1 ]
 	do
 		sleep 1
+		running=checkRunning $pid
 	done
     else 
         echo "Failed to locate ALINOUS PID File" 1>&2
