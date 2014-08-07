@@ -14,6 +14,10 @@ client_message "Copy $SRC_PATH to tomcat"
 
 if [ -d $TOMCAT_DIR ]; then
 	mkdir -p $TOMCAT_DIR
+	mkdir -p ${TOMCAT_DIR}logs
+	mkdir -p ${TOMCAT_DIR}temp
+	mkdir -p ${TOMCAT_DIR}webapps
+	mkdir -p ${TOMCAT_DIR}work
 fi
 
 cp -Rf ${SRC_PATH}* ${TOMCAT_DIR}
