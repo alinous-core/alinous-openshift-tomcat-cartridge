@@ -43,7 +43,10 @@ for conf_file in "${replacement_conf_files[@]}"; do
 done
 
 
-mkdir -p ALINOUS_HOME;
+mkdir -p $ALINOUS_HOME;
 
+TEMPLATE_PATH=${OPENSHIFT_ALINOUS_DIR}template
+
+cp -Rf ${TEMPLATE_PATH}/* ${ALINOUS_HOME}
 
 
