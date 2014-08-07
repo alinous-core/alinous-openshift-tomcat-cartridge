@@ -6,7 +6,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 export OPENSHIFT_TOMCAT_DIR=${OPENSHIFT_HOMEDIR}tomcat
 export ALINOUS_HOME=${OPENSHIFT_HOMEDIR}ALINOUS_HOME
 
-export SRC_PATH = ${OPENSHIFT_HOMEDIR}versions/${TOMCAT_BINARY}
+SRC_PATH=${OPENSHIFT_HOMEDIR}versions/${TOMCAT_BINARY}
 
 client_message "Start Installing Alinous-Core Cartridge $ALINOUS_HOME"
 client_message "Copy $SRC_PATH to tomcat"
