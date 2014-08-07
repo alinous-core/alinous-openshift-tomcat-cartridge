@@ -5,6 +5,8 @@ set -e
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 source ${OPENSHIFT_ALINOUS_DIR}/bin/util
 
+client_message "init database"
+
 export TOMCAT_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat
 SRC_CONFIG_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
 
@@ -19,5 +21,7 @@ replacement_conf_files=(
 for conf_file in "${replacement_conf_files[@]}"; do
   sed ${sed_replace_env} ${SRC_CONFIG_PATH}/conf/${conf_file} > ${TOMCAT_DIR}/conf/${conf_file}
 done
+
+createdb alinousapp
 
 
