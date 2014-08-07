@@ -23,7 +23,7 @@ for conf_file in "${replacement_conf_files[@]}"; do
 done
 
 
-if [ -z "$(psql -l -t|gawk '{print $OPENSHIFT_APP_NAME }'|egrep "^${OPENSHIFT_APP_NAME}$")" ];then
+if [ -z "$(psql -l -t |egrep "$OPENSHIFT_APP_NAME"| egrep "$OPENSHIFT_POSTGRESQL_DB_USERNAME")" ];then
    client_message "CREATE DATABASE ${OPENSHIFT_APP_NAME}"
    createdb ${OPENSHIFT_APP_NAME}
 else
