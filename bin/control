@@ -12,12 +12,15 @@ function status() {
 
 
 function start() {
-    client_message "Stop tomcat and alinous server";
-    echo
+    client_message "Start tomcat and alinous server";
+    
+    SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
+    client_message "SHELL_DIR : $SHELL_DIR";
+    ${tomcat}/startup.sh
 }
 
 function stop() {
-    client_message "start tomcat and alinous server";
+    client_message "Stop tomcat and alinous server";
     exit 0
 }
 
