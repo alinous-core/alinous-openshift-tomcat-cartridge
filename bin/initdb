@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+source ${OPENSHIFT_ALINOUS_DIR}/bin/util
+
+export TOMCAT_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat
+SRC_CONFIG_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
+
+sed_replace_env=$(print_sed_exp_replace_env_var)
+
+replacement_conf_files=(
+  "context.xml"
+)
+
+for conf_file in "${replacement_conf_files[@]}"; do
+  sed ${sed_replace_env} ${SRC_CONFIG_PATH}/conf/${conf_file} > ${TOMCAT_DIR}/conf/${conf_file}
+done
+
+

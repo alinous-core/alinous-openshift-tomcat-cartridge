@@ -12,6 +12,9 @@ function status() {
 
 
 function start() {
+    
+    ${OPENSHIFT_ALINOUS_DIR}/bin/initdb
+    
     client_message "Start tomcat and alinous server";
     
     SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
