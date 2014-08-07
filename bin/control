@@ -5,7 +5,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 STOPTIMEOUT=10
 FMT="%a %b %d %Y %H:%M:%S GMT%z (%Z)"
 
-ALINOUS_PID_FILE="${OPENSHIFT_ALINOUS_DIR}/run/alinous.pid"
+ALINOUS_PID_FILE="${OPENSHIFT_ALINOUS_DIR}run/alinous.pid"
 
 # Kill the process given by $1 and its children
 killtree() {
@@ -46,7 +46,7 @@ function start() {
     
     SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
     client_message "SHELL_DIR : $SHELL_DIR";
-    ${SHELL_DIR}/startup.sh > ${OPENSHIFT_ALINOUS_DIR}/logs/tomcat.log 2>&1 &
+    ${SHELL_DIR}/startup.sh > ${OPENSHIFT_ALINOUS_DIR}logs/tomcat.log 2>&1 &
     PROCESS_ID=$!
     
     echo $PROCESS_ID > $ALINOUS_PID_FILE
