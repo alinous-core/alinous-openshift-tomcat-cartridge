@@ -79,7 +79,9 @@ function stop() {
 }
 
 function restart() {
+    client_message "Restart tomcat and alinous server";
     stop
+    client_message "Start tomcat and alinous server";
     start
     exit 0
 }
