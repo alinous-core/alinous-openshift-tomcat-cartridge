@@ -16,7 +16,7 @@ function start() {
     
     SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
     client_message "SHELL_DIR : $SHELL_DIR";
-    ${tomcat}/startup.sh
+    ${SHELL_DIR}/startup.sh
 }
 
 function stop() {
