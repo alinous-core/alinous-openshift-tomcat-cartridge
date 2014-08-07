@@ -25,9 +25,6 @@ fi
 cp -Rf ${SRC_PATH}/* ${TOMCAT_DIR}
 
 sed_replace_env=$(print_sed_exp_replace_env_var)
-
-client_message "sed_replace_env : $sed_replace_env"
-
 replacement_conf_files=(
   "server.xml"
   "context.xml"

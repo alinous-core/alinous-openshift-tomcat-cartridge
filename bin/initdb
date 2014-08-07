@@ -10,6 +10,8 @@ SRC_CONFIG_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
 
 sed_replace_env=$(print_sed_exp_replace_env_var)
 
+client_message "sed_replace_env : $sed_replace_env"
+
 replacement_conf_files=(
   "context.xml"
 )
