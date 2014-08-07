@@ -39,9 +39,11 @@ replacement_conf_files=(
 )
 
 for conf_file in "${replacement_conf_files[@]}"; do
-  sed ${sed_replace_env} ${SRC_CONFIG_PATH}/bun/${conf_file} > ${TOMCAT_DIR}/bin/${conf_file}
+  sed ${sed_replace_env} ${SRC_CONFIG_PATH}/bin/${conf_file} > ${TOMCAT_DIR}/bin/${conf_file}
 done
 
+
+mkdir -p ALINOUS_HOME;
 
 
 
