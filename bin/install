@@ -3,9 +3,12 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
+
+
+
 client_message "Start Installing Alinous-Core Cartridge $ALINOUS_HOME"
 
-client_message "ALINOUS_HOME is $ALINOUS_HOME"
+
 
 
 
