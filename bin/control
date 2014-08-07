@@ -48,15 +48,12 @@ function start() {
     client_message "Start tomcat and alinous server";
     
     SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
-    client_message "SHELL_DIR : $SHELL_DIR";
+    client_message "SHELL_DIR : $SHELL_DIR"
 
-　　　　export CATALINA_PID="$ALINOUS_PID_FILE"
+　　　　export CATALINA_PID=$ALINOUS_PID_FILE
 
-    ${SHELL_DIR}/startup.sh & # > ${OPENSHIFT_ALINOUS_DIR}logs/tomcat.log 2>&1 &
-    PROCESS_ID=$!
-    
-    # echo $PROCESS_ID > $ALINOUS_PID_FILE
-    # client_message "PROCESS_ID ---> $PROCESS_ID";
+    ${SHELL_DIR}/startup.sh > ${OPENSHIFT_ALINOUS_DIR}logs/tomcat.log 2>&1 &
+ 
 }
 
 function stop() {
