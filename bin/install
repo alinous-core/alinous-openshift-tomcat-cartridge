@@ -22,12 +22,6 @@ fi
 
 cp -Rf ${SRC_PATH}/* ${TOMCAT_DIR}
 
-# Link the system Tomcat binaries to the cart Tomcat instance directory
-SYSTEM_TOMCAT_DIR="/opt/apache-tomcat-7.0"
-
-ln -sf ${SYSTEM_TOMCAT_DIR}/bin/bootstrap.jar ${TOMCAT_DIR}/bin/bootstrap.jar
-ln -sf ${SYSTEM_TOMCAT_DIR}/bin/commons-daemon.jar ${TOMCAT_DIR}/bin/commons-daemon.jar
-ln -sf ${SYSTEM_TOMCAT_DIR}/bin/tomcat-juli.jar ${TOMCAT_DIR}/bin/tomcat-juli.jar
 
 
 

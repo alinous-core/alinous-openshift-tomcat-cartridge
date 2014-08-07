@@ -8,6 +8,8 @@ Source-Url: https://github.com/alinous-core/alinous-cartridge/archive/master.zip
 Categories:
   - service
   - web_framework
+  - java
+  - tomcat
 Website: http://alinous.org
 Provides:
   - alinous
