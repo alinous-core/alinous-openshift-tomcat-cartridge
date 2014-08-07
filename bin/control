@@ -18,6 +18,8 @@ killtree() {
     done
     echo kill -9 ${_pid}
     kill -9 ${_pid}
+    
+    exit 0
 }
 
 function status() {
@@ -57,6 +59,8 @@ function start() {
     SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
 
     ${SHELL_DIR}/startup.sh > ${OPENSHIFT_ALINOUS_DIR}logs/tomcat.log 2>&1 &
+
+    exit 0
 }
 
 function stop() {
@@ -77,26 +81,29 @@ function stop() {
 function restart() {
     stop
     start
+    exit 0
 }
 
 function build() {
     client_message "building.....";
     echo
+    exit 0
 }
 
 function post-deploy() {
     echo
+    exit 0
 }
 
 function pre-build() {
     echo
+    exit 0
 }
 
 function tidy() {
-  client_message "Emptying log dir: $OPENSHIFT_ALINOUS_DIR/log"
-  shopt -s dotglob
-  rm -rf $OPENSHIFT_ALINOUS/ALINOUS_HOME/log/*
-  rm -rf $OPENSHIFT_ALINOUS/ALINOUS_HOME/tmp/*
+    client_message "Emptying log dir: $OPENSHIFT_ALINOUS_DIR/log"
+    shopt -s dotglob
+    exit 0
 }
 
 #
