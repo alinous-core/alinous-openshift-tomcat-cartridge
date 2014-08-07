@@ -51,5 +51,6 @@ Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: JPDA_PORT
     Private-Port:      8787
-
+Requires:
+  - postgresql-9.2
 
