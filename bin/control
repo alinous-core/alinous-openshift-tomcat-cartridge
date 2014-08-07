@@ -18,8 +18,6 @@ killtree() {
     done
     echo kill -9 ${_pid}
     kill -9 ${_pid}
-    
-    exit 0
 }
 
 function status() {
@@ -82,11 +80,12 @@ function stop() {
         echo "Sending SIGTERM to tomcat:$pid ..." 1>&2
         killtree $pid
 	
-        running=checkRunning $pid
-	while [ $running  eq 1 ]
+        running=$(checkRunning $pid)
+	while [ $running ]
 	do
+		client_message "waiting for $pid to stop, now [$running]"
 		sleep 1
-		running=checkRunning $pid
+		running=$(checkRunning $pid)
 	done
     else 
         echo "Failed to locate ALINOUS PID File" 1>&2
