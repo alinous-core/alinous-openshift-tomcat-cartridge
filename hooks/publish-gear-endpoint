@@ -13,4 +13,4 @@ fi
 #
 # Publish this gear's endpoint.
 # 
-echo "${OPENSHIFT_GEAR_UUID}@${gip}:tomcat;$OPENSHIFT_GEAR_DNS"
+echo "${OPENSHIFT_GEAR_UUID}@${gip}:alinous;$OPENSHIFT_GEAR_DNS"
