@@ -10,7 +10,7 @@ export ALINOUS_HOME=${OPENSHIFT_ALINOUS_DIR}ALINOUS_HOME
 SRC_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
 
 client_message "Start Installing Alinous-Core Cartridge $ALINOUS_HOME"
-client_message "Copy $SRC_PATH to tomcat"
+client_message "Copy $SRC_PATH to $TOMCAT_DIR"
 
 if [ ! -d $TOMCAT_DIR ]; then
 	mkdir -p $TOMCAT_DIR
@@ -20,7 +20,7 @@ if [ ! -d $TOMCAT_DIR ]; then
 	mkdir -p $TOMCAT_DIR/work
 fi
 
-cp -Rf ${SRC_PATH}* ${TOMCAT_DIR}
+cp -Rf ${SRC_PATH}/* ${TOMCAT_DIR}
 
 
 
