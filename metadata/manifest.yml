@@ -16,18 +16,40 @@ Provides:
 Scaling:
   Min: 1
   Max: 1
+Publishes:
+  get-internal-uri:
+    Type: "NET_TCP:http"
+  publish-http-url:
+    Type: "NET_TCP:httpd-proxy-info"
+  publish-gear-endpoint:
+    Type: "NET_TCP:gear-endpoint-info"
+Subscribes:
+  set-db-connection-info:
+    Type: "NET_TCP:db:connection-info"
+    Required: false
+  set-nosql-db-connection-info:
+    Type: "NET_TCP:nosqldb:connection-info"
+    Required: false
+  set-jdbc-info:
+    Type: "NET_TCP:jdbc"
 Group-Overrides:
   - components:
-    - alinous-1.0
+    - "tomcat-8.0"
+    - web_proxy
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: HTTP_PORT
-    Private-Port:      16987
+    Private-Port:      8080
     Public-Port-Name:  HTTP_PROXY_PORT
     Mappings:
       - Frontend:      ""
         Backend:       ""
-        Options:       { websocket: true }
-
+        Options:       { "websocket": 1}
+      - Frontend:      "/health"
+        Backend:       "/$OPENSHIFT_REPO_DIR/.openshift/configuration/health.html"
+        Options:       { "file": 1}
+  - Private-IP-Name:   IP
+    Private-Port-Name: JPDA_PORT
+    Private-Port:      8787
 
 
