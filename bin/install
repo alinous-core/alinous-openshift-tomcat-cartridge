@@ -3,7 +3,8 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-
+export OPENSHIFT_TOMCAT_DIR=${OPENSHIFT_HOMEDIR}tomcat
+export ALINOUS_HOME=$OPENSHIFT_HOMEDIR/ALINOUS_HOME
 
 
 client_message "Start Installing Alinous-Core Cartridge $ALINOUS_HOME"

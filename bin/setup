@@ -5,9 +5,6 @@ set -u
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 
-export OPENSHIFT_TOMCAT_DIR=${OPENSHIFT_HOMEDIR}tomcat
-export ALINOUS_HOME=$OPENSHIFT_HOMEDIR/ALINOUS_HOME
-
 client_message "Start Installing Tomcat $OPENSHIFT_TOMCAT_DIR"
 
 #for dir in logs tmp pid cache; do
