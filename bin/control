@@ -8,6 +8,7 @@ FMT="%a %b %d %Y %H:%M:%S GMT%z (%Z)"
 
 function status() {
     echo "status()"
+    
 }
 
 
@@ -20,15 +21,20 @@ function start() {
     SHELL_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat/bin
     client_message "SHELL_DIR : $SHELL_DIR";
     ${SHELL_DIR}/startup.sh
+
+   
 }
 
 function stop() {
     client_message "Stop tomcat and alinous server";
+    
+    
     exit 0
 }
 
 function restart() {
-    echo
+    stop();
+    start();
 }
 
 function build() {
