@@ -85,24 +85,27 @@ function restart() {
 }
 
 function build() {
-    client_message "building.....";
-    echo
+    client_message "building....."
+    exit 0
+}
+
+function deploy() {
+    client_message "deploy....."
     exit 0
 }
 
 function post-deploy() {
-    echo
+    client_message "post-deploy....."
     exit 0
 }
 
 function pre-build() {
-    echo
+    client_message "pre-build....."
     exit 0
 }
 
 function tidy() {
     client_message "Emptying log dir: $OPENSHIFT_ALINOUS_DIR/log"
-    shopt -s dotglob
     exit 0
 }
 
@@ -126,6 +129,7 @@ case "$1" in
     graceful-stop|stop)  stop        ;;
     status)              status      ;;
     build)               build       ;;
+    deploy)              deploy      ;;
     pre-build)           pre-build   ;;
     post-deploy)         post-deploy ;;
     tidy)                tidy        ;;
