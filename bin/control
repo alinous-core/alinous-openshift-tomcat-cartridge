@@ -70,6 +70,11 @@ function stop() {
         pid=$(cat $ALINOUS_PID_FILE);
         echo "Sending SIGTERM to tomcat:$pid ..." 1>&2
         killtree $pid
+	
+	while [ isrunning eq 1 ]
+	do
+		sleep 1
+	done
     else 
         echo "Failed to locate ALINOUS PID File" 1>&2
     fi
