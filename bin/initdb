@@ -22,6 +22,13 @@ for conf_file in "${replacement_conf_files[@]}"; do
   sed ${sed_replace_env} ${SRC_CONFIG_PATH}/conf/${conf_file} > ${TOMCAT_DIR}/conf/${conf_file}
 done
 
-createdb alinousapp
+
+if [ -z "$(psql -l -t|gawk '{print ${OPENSHIFT_APP_NAME}}'|egrep "^${OPENSHIFT_APP_NAME}$")" ];then
+   client_message "CREATE DATABASE ${OPENSHIFT_APP_NAME}"
+   createdb ${OPENSHIFT_APP_NAME}
+else
+   client_message "Skip CREATE DATABASE ${OPENSHIFT_APP_NAME}"
+fi
+
 
 
