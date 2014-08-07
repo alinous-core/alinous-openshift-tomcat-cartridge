@@ -9,7 +9,7 @@ export TOMCAT_DIR=${OPENSHIFT_ALINOUS_DIR}tomcat
 export ALINOUS_HOME=${OPENSHIFT_ALINOUS_DIR}ALINOUS_HOME
 
 SRC_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
-SRC_CONFIG_PATH=${OPENSHIFT_ALINOUS_DIR}versions
+SRC_CONFIG_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
 
 client_message "Start Installing Alinous-Core Cartridge $ALINOUS_HOME"
 client_message "Copy $SRC_PATH to $TOMCAT_DIR"
@@ -34,7 +34,7 @@ replacement_conf_files=(
 )
 
 for conf_file in "${replacement_conf_files[@]}"; do
-  sed ${sed_replace_env} ${SRC_CONFIG_PATH}/config/${conf_file} > ${TOMCAT_DIR}/conf/${conf_file}
+  sed ${sed_replace_env} ${SRC_CONFIG_PATH}/conf/${conf_file} > ${TOMCAT_DIR}/conf/${conf_file}
 done
 
 
