@@ -34,6 +34,13 @@ for conf_file in "${replacement_conf_files[@]}"; do
   sed ${sed_replace_env} ${SRC_CONFIG_PATH}/conf/${conf_file} > ${TOMCAT_DIR}/conf/${conf_file}
 done
 
+replacement_conf_files=(
+  "setenv.sh"
+)
+
+for conf_file in "${replacement_conf_files[@]}"; do
+  sed ${sed_replace_env} ${SRC_CONFIG_PATH}/bun/${conf_file} > ${TOMCAT_DIR}/bin/${conf_file}
+done
 
 
 
