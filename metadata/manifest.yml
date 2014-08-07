@@ -22,7 +22,7 @@ Group-Overrides:
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: HTTP_PORT
-    Private-Port:      18080
+    Private-Port:      16987
     Public-Port-Name:  HTTP_PROXY_PORT
     Mappings:
       - Frontend:      ""
