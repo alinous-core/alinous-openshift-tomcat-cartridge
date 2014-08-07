@@ -17,5 +17,16 @@ Scaling:
 Group-Overrides:
   - components:
     - alinous-1.0
-Install-Build-Required: false
+Endpoints:
+  - Private-IP-Name:   IP
+    Private-Port-Name: HTTP_PORT
+    Private-Port:      8080
+    Public-Port-Name:  HTTP_PROXY_PORT
+    Mappings:
+      - Frontend:      ""
+        Backend:       ""
+        Options:       { "websocket": 1}
+      - Frontend:      "/health"
+        Backend:       "/$OPENSHIFT_REPO_DIR/.openshift/configuration/health.html"
+        Options:       { "file": 1}
 
