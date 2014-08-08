@@ -14,6 +14,9 @@ SRC_CONFIG_PATH=${OPENSHIFT_ALINOUS_DIR}versions/${TOMCAT_BINARY}
 client_message "Start Installing Alinous-Core Cartridge $ALINOUS_HOME"
 client_message "Copy $SRC_PATH to $TOMCAT_DIR"
 
+echo `env` > ~${OPENSHIFT_ALINOUS_DIR}message.txt
+
+
 if [ ! -d $TOMCAT_DIR ]; then
 	mkdir -p $TOMCAT_DIR
 	mkdir -p $TOMCAT_DIR/logs
