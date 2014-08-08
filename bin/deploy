@@ -4,7 +4,7 @@ set -e
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-client_message "deploy....."
+client_message "deploy.....　$OPENSHIFT_REPO_DIR"
 
 exit 0
 
