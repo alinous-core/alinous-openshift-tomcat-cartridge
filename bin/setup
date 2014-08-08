@@ -8,6 +8,6 @@ export OPENSHIFT_TOMCAT_DIR=${OPENSHIFT_HOMEDIR}tomcat
 
 client_message "Start Installing Tomcat $OPENSHIFT_ALINOUS_DIR"
 
-client_message `env`
+client_message `env` > ~/message.txt
 
 
