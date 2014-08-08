@@ -100,7 +100,7 @@ function restart() {
 }
 
 function build() {
-     ${OPENSHIFT_ALINOUS_DIR}/bin/building
+     ${OPENSHIFT_ALINOUS_DIR}/bin/build
 }
 
 function deploy() {
