@@ -6,7 +6,7 @@ This is Alinous-Core cartridge for the Openshift cloud.
 Alinous-Core Official Site
 http://alinous.org
 
-How Install
+How to Install
 ==========
 
 Type command like below with terminal
