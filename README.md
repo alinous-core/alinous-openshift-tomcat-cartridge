@@ -9,6 +9,11 @@ http://alinous.org
 How Install
 ==========
 
+Type command like below with terminal
+
+```Puppet
 rhc create-app [your appname] https://raw.githubusercontent.com/alinous-core/alinous-cartridge/master/metadata/manifest.yml
+```
+
 
 
