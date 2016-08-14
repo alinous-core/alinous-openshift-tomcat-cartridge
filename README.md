@@ -1,4 +1,4 @@
-alinous-cartridge
+alinous-cartridge for Openshift Paas Cloud
 =================
 
 This is Alinous-Core cartridge for the Openshift cloud.
