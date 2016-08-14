@@ -4,7 +4,10 @@ alinous-cartridge
 This is Alinous-Core cartridge for the Openshift cloud.
 
 Alinous-Core Official Site
-http://alinous.org
+https://www.alinous.org
+
+This cartridge contains Tomcat, Java codes, and Shell scripts for the cartridge.
+
 
 How to Install
 ==========
